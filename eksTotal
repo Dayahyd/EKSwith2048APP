@@ -7,8 +7,10 @@ Name: <yourname>-eks-cluster-1
 Use K8S version 1.25
 
 Create an IAM role 'eks-cluster-role' with 1 policy attached: AmazonEKSClusterPolicy
+(Allows eks instances to call AWS services on your behalf.) here select for eks and coose ekscluster
+
 Create another IAM role 'eks-node-grp-role' with 3 policies attached: 
-(Allows EC2 instances to call AWS services on your behalf.)
+(Allows EC2 instances to call AWS services on your behalf.) here select ec2
     - AmazonEKSWorkerNodePolicy
     - AmazonEC2ContainerRegistryReadOnly
     - AmazonEKS_CNI_Policy
@@ -51,6 +53,9 @@ Open cloudshell
 # Type on your AWS CLI window 
 aws sts get-caller-identity
 # observe your account and user id details
+
+#remove old .kubeconfigfile
+rm .kube/config
 
 # Create a  kubeconfig file where it stores the credentials for EKS:
 # kubeconfig configuration allows you to connect to your cluster using the kubectl command line.
