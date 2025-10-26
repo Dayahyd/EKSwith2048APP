@@ -1,6 +1,7 @@
 Create an EKS cluster and deploy 2048 game into that cluster
 ==================================================
 
+
 Task 1: Create an EKS cluster
 =============================
 Name: <yourname>-eks-cluster-1
